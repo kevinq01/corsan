@@ -11,7 +11,6 @@
         </a>
     @endcan
 
-
     <a class="nav-link" href="/productos">
         <i class=" fas fa-building"></i><span>Productos</span>
     </a>

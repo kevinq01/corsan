@@ -7,6 +7,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+
     function __construct()
     {
         //Los permisos de la aplicación

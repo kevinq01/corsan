@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductImportController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

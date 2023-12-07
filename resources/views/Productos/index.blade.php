@@ -13,12 +13,12 @@
 
                             @can('crear-product')
                                 <a class="btn btn-warning" href="{{ route('productos.create') }}">Nuevo</a>
-                                
-                                {{-- <form action="{{ route('importar.import') }}" method="post" enctype="multipart/form-data">
+
+                                <form action="{{ route('importar.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <input type="file" name="file" accept=".csv">
                                     <button type="submit">Cargar Productos</button>
-                                </form> --}}
+                                </form>
                             @endcan
 
                             <table class="table table-striped mt-2">

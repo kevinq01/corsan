@@ -49,6 +49,7 @@
 @include('profile.edit_profile')
 
 </body>
+<script src="https://kit.fontawesome.com/b3ff0aa863.js" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>

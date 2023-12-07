@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -12,13 +13,19 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
     public function index()
     {
-        return view('home');
+        $products = Product::paginate(5);
+
+        // Datos para las tarjetas
+        $productosEnStock = $products->sum('stock');
+        $productosSinStock = Product::where('stock', 0)->count();
+
+        // Datos para los graficos
+        $labels = $products->pluck('nombre')->toArray();
+        $data = $products->pluck('stock')->toArray();
+
+        return view('home', compact('products', 'productosEnStock', 'productosSinStock', 'labels', 'data'));
     }
 }
